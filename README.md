@@ -4,10 +4,8 @@ Implementação prática do guia [Thinking in React](https://react.dev/learn/thi
 
 ## Tecnologias utilizadas
 
-- **React 18**
-- **TypeScript**
-- **Vite**
-- **CSS Modules**
+- **Front-end:** React 18, TypeScript, Vite e CSS Modules
+- **Back-end:** Node.js, Express, TypeScript, CORS e Docker
 
 ## Estrutura de Componentes
 
@@ -19,7 +17,9 @@ Implementação prática do guia [Thinking in React](https://react.dev/learn/thi
 
 ## Como executar o projeto
 
-1. Instale as dependências:
+### Front-end
+
+1. Instale as dependências na raiz do projeto:
    ```bash
    npm install
    ```
@@ -33,4 +33,16 @@ Implementação prática do guia [Thinking in React](https://react.dev/learn/thi
    ```bash
    npm run build
    ```
+
+### Back-end (API REST + Docker)
+
+1. Acesse a pasta `backend/` e instale as dependências:
+   ```bash
+   cd backend
+   npm install
+   npm run build
+   npm start
+   ```
+   A API ficará disponível em `http://localhost:3000/api/products`.
+
 

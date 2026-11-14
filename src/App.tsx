@@ -1,9 +1,32 @@
+import { useEffect, useState } from 'react'
 import styles from './styles/app.module.css'
 import FilterableProductTable from './components/FilterableProductTable'
 import { PRODUCTS } from './data/products'
+import { Product } from './types'
+
+const API_URL =
+  import.meta.env.VITE_API_URL || 'http://localhost:3000/api/products'
 
 export default function App() {
-  const inStockCount = PRODUCTS.filter((p) => p.stocked).length
+  const [products, setProducts] = useState<Product[]>(PRODUCTS)
+
+  useEffect(() => {
+    fetch(API_URL)
+      .then((res) => {
+        if (!res.ok) throw new Error('Failed to fetch products')
+        return res.json() as Promise<Product[]>
+      })
+      .then((data) => {
+        if (Array.isArray(data) && data.length > 0) {
+          setProducts(data)
+        }
+      })
+      .catch(() => {
+        // Mantem dados locais caso a API ainda esteja iniciando
+      })
+  }, [])
+
+  const inStockCount = products.filter((p) => p.stocked).length
 
   return (
     <div className={styles.app}>
@@ -34,10 +57,10 @@ export default function App() {
           </div>
         </div>
         <span className={styles.stockCounter}>
-          {inStockCount} de {PRODUCTS.length} em estoque
+          {inStockCount} de {products.length} em estoque
         </span>
       </header>
-      <FilterableProductTable products={PRODUCTS} />
+      <FilterableProductTable products={products} />
     </div>
   )
 }
