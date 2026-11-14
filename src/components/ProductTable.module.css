@@ -1,19 +1,35 @@
+.tableContainer {
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
 .table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 12px;
 }
 
-.table th,
-.table td {
-  padding: 10px 15px;
-  text-align: left;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.table th {
-  background: #f0f0f0;
+.headerCell,
+.headerCellRight {
+  background: #f8fafc;
   font-weight: 600;
-  color: #333;
+  color: #64748b;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 12px 18px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.headerCellRight {
+  text-align: right;
+}
+
+.emptyState {
+  padding: 32px 18px;
+  text-align: center;
+  color: #64748b;
   font-size: 14px;
 }

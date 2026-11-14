@@ -1,6 +1,18 @@
 .categoryHeader {
-  background: #e8f5e9;
-  font-weight: bold;
-  color: #2e7d32;
-  font-size: 14px;
+  background: #ecfdf5;
+  color: #065f46;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 11px 18px;
+  text-align: left;
+  border-top: 1px solid #d1fae5;
+  border-bottom: 1px solid #d1fae5;
+}
+
+.categoryContent {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
