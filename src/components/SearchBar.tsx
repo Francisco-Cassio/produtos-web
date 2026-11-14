@@ -14,14 +14,19 @@ export default function SearchBar({
   onInStockOnlyChange
 }: SearchBarProps) {
   return (
-    <form className={styles.form}>
-      <input
-        type="text"
-        value={filterText}
-        placeholder="Search..."
-        className={styles.input}
-        onChange={(e) => onFilterTextChange(e.target.value)}
-      />
+    <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
+      <div className={styles.inputWrapper}>
+        <span className={styles.searchIcon} aria-hidden="true">
+          🔍
+        </span>
+        <input
+          type="text"
+          value={filterText}
+          placeholder="Search products (e.g. Apple, Spinach)..."
+          className={styles.input}
+          onChange={(e) => onFilterTextChange(e.target.value)}
+        />
+      </div>
       <label className={styles.checkboxLabel}>
         <input
           type="checkbox"
@@ -29,8 +34,7 @@ export default function SearchBar({
           onChange={(e) => onInStockOnlyChange(e.target.checked)}
           className={styles.checkbox}
         />
-        {' '}
-        Only show products in stock
+        <span>Only show products in stock</span>
       </label>
     </form>
   )
