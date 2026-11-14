@@ -36,6 +36,9 @@ Implementação prática do guia [Thinking in React](https://react.dev/learn/thi
 
 ### Back-end (API REST + Docker)
 
+- **API em Produção (Render):** `https://produtos-api-gykj.onrender.com/api/products`
+
+Para rodar localmente:
 1. Acesse a pasta `backend/` e instale as dependências:
    ```bash
    cd backend

@@ -5,7 +5,8 @@ import { PRODUCTS } from './data/products'
 import { Product } from './types'
 
 const API_URL =
-  import.meta.env.VITE_API_URL || 'http://localhost:3000/api/products'
+  import.meta.env.VITE_API_URL ||
+  'https://produtos-api-gykj.onrender.com/api/products'
 
 export default function App() {
   const [products, setProducts] = useState<Product[]>(PRODUCTS)
